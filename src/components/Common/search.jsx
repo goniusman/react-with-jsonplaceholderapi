@@ -1,0 +1,20 @@
+import React from "react";
+import { Input } from "reactstrap";
+import Context from "../context";
+
+const Search = () => (
+  <Context.Consumer>
+    {({ handleSeach, term }) => (
+      <div className="d-flex my-4">
+        <Input
+          placeholder="Enter Search Team"
+          className="mr-3"
+          value={term}
+          onChange={(e) => handleSeach(e.target.value)}
+        />
+      </div>
+    )}
+  </Context.Consumer>
+);
+
+export default Search;
